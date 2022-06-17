@@ -19,21 +19,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from jflte
 #$(call inherit-product, device/samsung/jflte/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit some common OmniROM stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit some JDCTeam stuff.
 #$(call inherit-product, vendor/jdc/config/common.mk)
 
-PRODUCT_NAME := lineage_jflte
+PRODUCT_NAME := omni_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_MODEL := GT-I9505
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=jfltexx \
-    PRIVATE_BUILD_DESC="jfltexx-user 5.0.1 LRX22C I9505XXUHQK1 release-keys"
-
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHQK1:user/release-keys
