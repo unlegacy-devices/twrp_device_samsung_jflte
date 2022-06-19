@@ -32,7 +32,7 @@ jobs:
           python3 ~/.bin/repo init --depth=1 -u https://github.com/OrangeFoxRecovery/fox-6.0_manifest.git -b fox_6.0
           python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
           git clone --depth=1 --branch ${{ env.BRANCH }} --single-branch https://github.com/TriDiscord/twrp_device_${{ env.OEM }}_${{ env.DEVICE }}.git device/${{ env.OEM }}/${{ env.DEVICE }}
-          git clone --depth=1 --branch custom-twrp --single-branch https://github.com/JDCTeam/android_kernel_samsung_jf.git kernel/samsung/jf
+          git clone --depth=1 --branch twrp-jf --single-branch https://github.com/JDCTeam/android_kernel_samsung_jf.git kernel/samsung/jf
 
       - name: Building OFRP
         run: |
@@ -40,12 +40,11 @@ jobs:
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
           export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-          export FOX_DRASTIC_SIZE_REDUCTION=1
+          export FOX_EXTREME_SIZE_REDUCTION=1
           export LC_ALL=C
           export OF_LEGACY_SHAR512=1
           lunch omni_${{ env.DEVICE }}-eng
           make -j$(nproc --all) recoveryimage
-
       - name: Uploading OFRP builds
         uses: actions/upload-artifact@v2
         with:
