@@ -28,6 +28,9 @@
 # Inherit from proprietary vendor
 #-include vendor/samsung/jf-common/BoardConfigVendor.mk
 
+CM_PLATFORM_SDK_VERSION := 7	# Required for libf2fs.so
+override TARGET_OUT_VENDOR_SHARED_LIBRARIES = $(TARGET_OUT_SHARED_LIBRARIES)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
@@ -102,7 +105,6 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_CRYPTO := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_TARGET_USES_QCOM_BSP := true
-TW_USE_TOOLBOX := true
 
 TARGET_OTA_ASSERT_DEVICE := jflte
 
