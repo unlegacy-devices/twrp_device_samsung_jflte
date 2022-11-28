@@ -42,6 +42,8 @@ jobs:
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
           export LC_ALL="C"
+          export OF_MAINTAINER="NotNoelChannel"
+          export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
           lunch omni_${{ env.DEVICE }}-eng
           make -j$(nproc --all) recoveryimage
           export PATH=$OLDPATH
