@@ -24,6 +24,7 @@
 #-include device/samsung/qcom-common/BoardConfigCommon.mk
 # Inherit from proprietary vendor
 #-include vendor/samsung/jf-common/BoardConfigVendor.mk
+TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,jactivelte,GT-I9505,jgedlte,i9505g,jfltevzw,jfltespr,jflterefreshspr,jfltetmo,jfltecri,jfltecsp,jfleatt,jfltecan,jfltetfnatt,jfltetfntmo,jflteusc,jfltezm
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
@@ -65,9 +66,6 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 367001600
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-# Toolchain
-#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
 # Recovery
 LZMA_RAMDISK_TARGETS := recovery
 TARGET_RECOVERY_DENSITY := hdpi
