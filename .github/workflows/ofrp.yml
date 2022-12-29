@@ -42,6 +42,7 @@ jobs:
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
           export LC_ALL="C"
+          export OF_FL_PATH1="/flashlight"
           export OF_MAINTAINER="NotNoelChannel"
           export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
           export OF_LEGACY_SHAR512=1
