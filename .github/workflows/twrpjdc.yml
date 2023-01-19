@@ -40,7 +40,7 @@ jobs:
           export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
           cd ~/OFRP
           rm -rf ~/OFRP/bootable/recovery
-          git clone https://github.com/JDCTeam/android_bootable_recovery -b twrp-jf ~/OFRP/bootable/recovery
+          git clone https://github.com/unlegacy-devices/android_bootable_recovery -b twrp-jf ~/OFRP/bootable/recovery
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
           export LC_ALL="C"
