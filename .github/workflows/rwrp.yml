@@ -10,7 +10,7 @@ jobs:
     env:
       OEM: samsung
       DEVICE: jflte
-      BRANCH: pbrp-6.0
+      BRANCH: twrp-6.0
     strategy:
       matrix:
         os: [ubuntu-20.04]

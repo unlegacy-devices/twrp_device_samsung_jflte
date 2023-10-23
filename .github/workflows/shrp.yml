@@ -8,7 +8,7 @@ jobs:
     env:
       OEM: samsung
       DEVICE: jflte
-      BRANCH: shrp-9.0
+      BRANCH: twrp-9.0
     steps:
       - name: Cleanup
         uses: rokibhasansagar/slimhub_actions@main
@@ -49,5 +49,5 @@ jobs:
       - name: Uploading SHRP builds
         uses: actions/upload-artifact@v2
         with:
-          name: shrő
+          name: shrp
           path: /home/runner/SHRP/out/target/product/${{ env.DEVICE }}/recovery.*

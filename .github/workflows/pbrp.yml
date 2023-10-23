@@ -8,7 +8,7 @@ jobs:
     env:
       OEM: samsung
       DEVICE: jflte
-      BRANCH: pbrp-6.0
+      BRANCH: twrp-6.0
     steps:
       - uses: actions/checkout@v2
       - name: Installing build dependencies
