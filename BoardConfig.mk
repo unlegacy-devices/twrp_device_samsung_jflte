@@ -20,32 +20,26 @@
 # included in a build is to use PRODUCT_PACKAGES in a product
 # definition file).
 #
-
+# Inherit from qcom-common
+#-include device/samsung/qcom-common/BoardConfigCommon.mk
+# Inherit from proprietary vendor
+#-include vendor/samsung/jf-common/BoardConfigVendor.mk
 TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,jactivelte,GT-I9505,jgedlte,i9505g,jfltevzw,jfltespr,jflterefreshspr,jfltetmo,jfltecri,jfltecsp,jfleatt,jfltecan,jfltetfnatt,jfltetfntmo,jflteusc,jfltezm
-
-# Additional flags
-TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
-
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
-
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_USES_64_BIT_BINDER := true
-
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
-
 # Boot image
 BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
@@ -60,10 +54,6 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/jflte/bootimg.mk
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/jflte/mkbootimg.mk
 
-# Toolchain
-KERNEL_TOOLCHAIN := /opt/toolchains/arm-eabi-4.8/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
-
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
@@ -76,7 +66,6 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 367001600
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-
 # Recovery
 LZMA_RAMDISK_TARGETS := recovery
 TARGET_RECOVERY_DENSITY := hdpi
@@ -84,7 +73,6 @@ TARGET_RECOVERY_DEVICE_DIRS := device/samsung/jflte
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_DOWNLOAD_MODE := true
-
 # TWRP
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
@@ -99,14 +87,5 @@ TW_INCLUDE_CRYPTO := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_TARGET_USES_QCOM_BSP := true
 TW_FORCE_USE_BUSYBOX := true
+TARGET_OTA_ASSERT_DEVICE := jflte
 ALLOW_MISSING_DEPENDENCIES := true
-
-# SHRP
-SHRP_DEVICE_CODE := jflte
-SHRP_MAINTAINER := notnoelchannel
-SHRP_LITE := true
-SHRP_EXPRESS := true
-SHRP_DARK := true
-
-# PitchBlack
-PB_TORCH_PATH := /sys/devices/virtual/camera/flash/rear_flash
