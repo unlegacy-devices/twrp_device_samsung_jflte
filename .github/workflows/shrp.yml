@@ -8,7 +8,7 @@ jobs:
     env:
       OEM: samsung
       DEVICE: jflte
-      BRANCH: twrp-9.0
+      BRANCH: twrp-6.0
     steps:
       - name: Cleanup
         uses: rokibhasansagar/slimhub_actions@main
