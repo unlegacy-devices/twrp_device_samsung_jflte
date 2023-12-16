@@ -1,8 +1,6 @@
 name: RWRP CI
-
 on:
   workflow_dispatch:
-
 jobs:
   build:
     name: RWRP Build CI
@@ -33,7 +31,7 @@ jobs:
         cd ~/RWRP
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-        python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-6.0
+        python3 ~/.bin/repo init --depth=1 -u https://github.com/unlegacy-devices/rw_manifest.git -b rw-n
         git clone --depth=1 --branch ${{ env.BRANCH }} --single-branch https://github.com/unlegacy-devices/twrp_device_${{ env.OEM }}_${{ env.DEVICE }}.git device/${{ env.OEM }}/${{ env.DEVICE }}
         git clone --depth=1 --branch twrp-jf --single-branch https://github.com/JDCTeam/android_kernel_samsung_jf.git kernel/samsung/jf
         git clone --depth=1 --branch android-7.1.2_r38 --single-branch https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8 /opt/toolchains/arm-eabi-4.8
@@ -45,8 +43,6 @@ jobs:
         export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
         export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
         cd ~/RWRP
-        rm -rf ~/RWRP/bootable/recovery
-        git clone https://github.com/unlegacy-devices/rw_recovery ~/TWRP/bootable/recovery
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL="C"
