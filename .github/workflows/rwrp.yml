@@ -32,7 +32,7 @@ jobs:
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
         python3 ~/.bin/repo init --depth=1 -u https://github.com/unlegacy-devices/rw_manifest.git -b rw-n
-        git clone --depth=1 --branch ${{ env.BRANCH }} --single-branch https://github.com/unlegacy-devices/twrp_device_${{ env.OEM }}_${{ env.DEVICE }}.git device/${{ env.OEM }}/${{ env.DEVICE }}
+        git clone --depth=1 --branch rwrp-7 --single-branch https://github.com/unlegacy-devices/twrp_device_${{ env.OEM }}_${{ env.DEVICE }}.git device/${{ env.OEM }}/${{ env.DEVICE }}
         git clone --depth=1 --branch twrp-jf --single-branch https://github.com/JDCTeam/android_kernel_samsung_jf.git kernel/samsung/jf
         git clone --depth=1 --branch android-7.1.2_r38 --single-branch https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8 /opt/toolchains/arm-eabi-4.8
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
