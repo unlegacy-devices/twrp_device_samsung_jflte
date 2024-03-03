@@ -37,6 +37,8 @@ jobs:
           OLDJAVAHOME=$JAVA_HOME
           export PATH="$HOME/.jdk_7/java-se-7u75-ri/bin:$PATH"
           export JAVA_HOME="$HOME/.jdk_7/java-se-7u75-ri"
+          rm -rf ~/OFRP/bootable/recovery
+          git clone https://github.com/unlegacy-devices/twrp_bootable_recovery -b android-9.0 ~/OFRP/bootable/recovery
           cd ~/OFRP
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
