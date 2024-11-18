@@ -10,7 +10,7 @@ jobs:
       DEVICE: jflte
       BRANCH: twrp-6.0
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Installing build dependencies
         run: |
           sudo apt-get update
@@ -46,7 +46,7 @@ jobs:
           export PATH=$OLDPATH
           export JAVA_HOME=$OLDJAVAHOME
       - name: Uploading OFRP builds
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ofrp
           path: /home/runner/OFRP/out/target/product/${{ env.DEVICE }}/recovery.*
